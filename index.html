@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini World — Login</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrap">
+  <div class="card">
+    <header class="card-header">
+      <h1>Mini World</h1>
+      <p class="subtitle">Play. Build. Share — Secure access with Telegram UID</p>
+    </header>
+
+    <form id="loginForm" class="form" onsubmit="return false;">
+      <label>UID (10 digits)</label>
+      <input id="uid" type="text" inputmode="numeric" pattern="\d{10}" placeholder="0000000000" maxlength="10" />
+
+      <label>Password</label>
+      <input id="password" type="password" placeholder="World@1234" />
+
+      <div class="row">
+        <button id="signin" class="btn primary" type="button">Sign In</button>
+        <button id="getUid" class="btn outline" type="button">Get UID (Telegram)</button>
+      </div>
+
+      <div class="row small">
+        <button id="forgot" class="link" type="button">Forgot password?</button>
+        <button id="changepwd" class="link" type="button">Change password</button>
+      </div>
+
+      <p class="note">Default password for new users: <strong>World@1234</strong></p>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+  <footer class="footer">
+    <p>Mobile-friendly demo • Telegram bot: <a href="https://t.me/+karanbannaa108" target="_blank">Open Bot</a></p>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

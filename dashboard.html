@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini World — Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="dash-wrap">
+  <nav class="dash-nav">
+    <div class="logo">Mini <span>World</span></div>
+    <div class="uid" id="showUid">UID: —</div>
+    <button id="logout" class="btn small">Logout</button>
+  </nav>
+
+  <header class="hero">
+    <h2>Welcome to Mini World</h2>
+    <p class="lead">Your mini-voxel playground — this page is a launcher for the game</p>
+    <div class="hero-actions">
+      <button id="play" class="btn big">Play Mini World</button>
+      <button id="profile" class="btn outline">Edit Profile</button>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h3>Your Account</h3>
+    <dl>
+      <dt>UID</dt><dd id="acctUid">—</dd>
+      <dt>Display name</dt><dd id="acctName">Player</dd>
+      <dt>Password</dt><dd id="acctPwd">••••••••</dd>
+    </dl>
+  </section>
+  <footer class="footer dash-footer">
+    <p>Powered by local demo backend + Telegram bot instructions</p>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
