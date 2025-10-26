@@ -15,11 +15,7 @@ function initLoginPage(){
     const uidInput = $("uid").value.trim() || ("guest_"+Date.now());
     status.textContent = "Requesting UID... Open Telegram when prompted.";
     try{
-      const resp = await fetch('https://d88ac112-4ffe-4def-afbe-3fd4f1bb177b-00-3gwrnifo1kicx.sisko.replit.dev/api/uid/request', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ uid: uidInput })
-});
+      const resp = await fetch('/api/uid/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({userId:uidInput, displayName:uidInput})});
       const data = await resp.json();
       window.open(data.telegramLink, '_blank');
       // poll status
@@ -36,11 +32,7 @@ function initLoginPage(){
     const uid = $("uid").value.trim(); if(!/^\d{10}$/.test(uid)){ status.textContent='Enter your UID first.'; return; }
     // request pwd reset from server (link to bot)
     try{
-      const resp = await fetch('https://d88ac112-4ffe-4def-afbe-3fd4f1bb177b-00-3gwrnifo1kicx.sisko.replit.dev/api/pwd/request', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ uid })
-});
+      const resp = await fetch('/api/pwd/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({userId:uid})});
       const d = await resp.json();
       window.open(d.telegramLink,'_blank');
       status.textContent = 'Opened Telegram. Follow bot instructions to set new password.';
